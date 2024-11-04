@@ -1,25 +1,27 @@
 @font-face {
     font-family: 'OTP';
-    src: url('/fonts/OTP.otf') format('opentype'); /* Specify the path to your OTF file */
+    src: url('/fonts/OTP.otf') format('opentype');
+    /* Specify the path to your OTF file */
     font-weight: normal;
     font-style: normal;
-  }
+}
 
 body {
     margin: 0;
     padding: 0;
     font-family: 'OTP', sans-serif;
     box-sizing: border-box;
-  }
+}
 
-.header-wrapper{
-    background: linear-gradient(to bottom, #4D94E6, #35BBDF,#21DADB);
+.header-wrapper {
+    background: linear-gradient(to bottom, #4D94E6, #35BBDF, #21DADB);
     min-height: 100%;
-    background: url('../assets/images/Pattern.png'), linear-gradient(to bottom,#2379db, #4D94E6, #35BBDF, #21DADB);
+    background: url('../assets/images/Pattern.png'), linear-gradient(to bottom, #2379db, #4D94E6, #35BBDF, #21DADB);
     background-size: cover;
     background-blend-mode: multiply;
 }
-  header {
+
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -56,7 +58,8 @@ body {
 }
 
 .search-button {
-    background-color: #ff4757; /* Example button color */
+    background-color: #ff4757;
+    /* Example button color */
     color: white;
     border: none;
     padding: 10px 15px;
@@ -65,10 +68,11 @@ body {
 }
 
 .hero {
-    background-size: cover, auto; 
-    background-position: center, center; 
+    background-size: cover, auto;
+    background-position: center, center;
     background-repeat: no-repeat;
-    height: 100vh; /* Full height */
+    height: 100vh;
+    /* Full height */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -88,7 +92,8 @@ body {
 
 .buttons {
     display: flex;
-    gap: 15px; /* Space between buttons */
+    gap: 15px;
+    /* Space between buttons */
 }
 
 .btn {
@@ -99,12 +104,142 @@ body {
 }
 
 .get-started {
-    background-color: #007bff; /* Example button color */
+    background-color: #007bff;
+    /* Example button color */
     color: white;
 }
 
 .discover-more {
     background-color: transparent;
     color: white;
-    border: 2px solid white; /* Border for this button */
+    border: 2px solid white;
+    /* Border for this button */
+}
+
+/**********************************************************************/
+
+.expertise-container {
+    max-width: 1000px;
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* Four columns across */
+    gap: 20px;
+    /* Space between items */
+}
+
+/* Expertise Item Styling */
+.expertise-item {
+    background-color: #ffffff;
+    /* White background for contrast */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.expertise-item:hover {
+    transform: scale(1.05);
+    /* Slight zoom on hover */
+}
+
+/* Heading Style */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Item Heading and Description */
+.expertise-title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.expertise-description {
+    font-size: 0.9em;
+    color: #555;
+    line-height: 1.4;
+}
+
+/* Responsive Adjustment */
+@media (max-width: 768px) {
+    .expertise-container {
+        grid-template-columns: repeat(2, 1fr);
+        /* Two columns on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .expertise-container {
+        grid-template-columns: 1fr;
+        /* One column on mobile */
+    }
+}
+
+/**********************************************************/
+.why-us {
+    background: linear-gradient(135deg, #21DADB 0%, #35BBDF 50%, #4D94E6 100%); /* Gradient background */
+    padding: 60px 20px; /* Padding for spacing */
+    text-align: center; /* Center text */
+    color: #ffffff; /* Light text color */
+}
+
+.why-us h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Text shadow for effect */
+}
+
+.why-us-content {
+    display: flex; /* Horizontal layout */
+    justify-content: space-around; /* Even spacing */
+    flex-wrap: wrap; /* Wrap items on smaller screens */
+}
+
+.reason {
+    flex: 1 1 200px; /* Responsive flex item */
+    padding: 20px; /* Inner padding */
+    margin: 10px; /* Space between items */
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+    border-radius: 15px; /* Rounded corners */
+    transition: transform 0.3s ease; /* Smooth transform */
+    position: relative; /* For pseudo-element positioning */
+}
+
+.reason:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.icon {
+    font-size: 3em; /* Larger icon size */
+    margin-bottom: 15px; /* Space below icon */
+    position: relative; /* For positioning pseudo-elements */
+}
+
+.icon::before {
+    content: ''; /* Pseudo-element for decoration */
+    position: absolute; /* Absolute positioning */
+    width: 80px; /* Width of the decorative shape */
+    height: 80px; /* Height of the decorative shape */
+    background-color: rgba(255, 255, 255, 0.3); /* Light background */
+    border-radius: 50%; /* Circle shape */
+    top: 10%; /* Positioning */
+    left: 10%; /* Positioning */
+    z-index: 0; /* Behind the icon */
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px; /* Space below heading */
+    z-index: 1; /* Above the pseudo-element */
+}
+
+p {
+    color: #ffffff; /* Light text for description */
+    line-height: 1.4; /* Improved readability */
+    z-index: 1; /* Above the pseudo-element */
 }

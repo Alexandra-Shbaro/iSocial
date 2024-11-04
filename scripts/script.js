@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     // Animate main heading
     gsap.from(".hero h1:first-of-type", {
         y: 50,
@@ -42,4 +42,8 @@ document.addEventListener("DOMContentLoaded", function() {
         delay: 1.5,
         ease: "power3.out"
     });
+
+    
 });
+
+
