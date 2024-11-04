@@ -243,3 +243,50 @@ p {
     line-height: 1.4; /* Improved readability */
     z-index: 1; /* Above the pseudo-element */
 }
+
+
+/******************************************/
+
+.what-we-deliver {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.delivery-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.delivery-item {
+    position: relative;
+    width: 200px; /* Set your card width */
+    height: 200px; /* Set your card height */
+    color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background-size: cover; /* Make sure the background covers the entire card */
+    background-position: center; /* Center the image */
+    background-image: url('../assets/images/circle.png'); /* Default background image */
+}
+
+.delivery-item.item1 {
+    background-image: url('../assets/images/image1.jpg'); /* Specific background image for item1 */
+}
+
+.delivery-item.item2 {
+    background-image: url('../assets/images/image2.jpg'); /* Specific background image for item2 */
+}
+
+.delivery-item.item3 {
+    background-image: url('../assets/images/image3.jpg'); /* Specific background image for item3 */
+}
+
+.delivery-item.item4 {
+    background-image: url('../assets/images/image4.jpg'); /* Specific background image for item4 */
+}
