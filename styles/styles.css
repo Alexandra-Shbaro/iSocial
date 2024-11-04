@@ -1,0 +1,110 @@
+@font-face {
+    font-family: 'OTP';
+    src: url('/fonts/OTP.otf') format('opentype'); /* Specify the path to your OTF file */
+    font-weight: normal;
+    font-style: normal;
+  }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'OTP', sans-serif;
+    box-sizing: border-box;
+  }
+
+.header-wrapper{
+    background: linear-gradient(to bottom, #4D94E6, #35BBDF,#21DADB);
+    min-height: 100%;
+    background: url('../assets/images/Pattern.png'), linear-gradient(to bottom,#2379db, #4D94E6, #35BBDF, #21DADB);
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+}
+
+.contact-info span {
+    margin-right: 20px;
+}
+
+.search-button {
+    background-color: #ff4757; /* Example button color */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hero {
+    background-size: cover, auto; 
+    background-position: center, center; 
+    background-repeat: no-repeat;
+    height: 100vh; /* Full height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px; /* Space between buttons */
+}
+
+.btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.get-started {
+    background-color: #007bff; /* Example button color */
+    color: white;
+}
+
+.discover-more {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white; /* Border for this button */
+}
