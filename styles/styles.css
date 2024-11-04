@@ -290,3 +290,132 @@ p {
 .delivery-item.item4 {
     background-image: url('../assets/images/image4.jpg'); /* Specific background image for item4 */
 }
+
+/**********************/
+.methodology-section {
+    padding: 40px;
+    background-color: #f0f4f8; /* Light background */
+}
+
+.methodology-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns layout */
+    gap: 20px; /* Space between items */
+    max-width: 1200px;
+    margin: 0 auto; /* Center the container */
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Set your card height */
+    perspective: 1000px; /* Add perspective for the 3D effect */
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    backface-visibility: hidden; /* Hide the back side when not flipped */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.6s; /* Animation duration */
+}
+
+.card-front {
+    background-color: #fff;
+}
+
+.card-back {
+    background-color: #007bff; /* Back card color */
+    color: #fff; /* Text color */
+    transform: rotateY(180deg); /* Start rotated */
+}
+
+.card:hover .card-front {
+    transform: rotateY(180deg); /* Flip the front */
+}
+
+.card:hover .card-back {
+    transform: rotateY(0deg); /* Show the back */
+}
+
+.methodology-icon {
+    font-size: 2em; /* Large icon size */
+    margin-bottom: 10px; /* Space below the icon */
+    color: #007bff; /* Icon color */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+
+/******************************************************/
+
+.contact-us {
+    background-color: #f8f9fa; /* Light background */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.contact-form {
+    max-width: 600px; /* Limit form width */
+    margin: 0 auto; /* Center form */
+    background-color: #ffffff; /* Form background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left; /* Align text to the left */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333; /* Label color */
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%; /* Full width */
+    padding: 10px;
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1em; /* Font size */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #007bff; /* Focus border color */
+    outline: none; /* Remove outline */
+}
+
+.submit-btn {
+    background-color: #007bff; /* Button color */
+    color: #ffffff; /* Button text color */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease; /* Transition for hover */
+}
+
+.submit-btn:hover {
+    background-color: #0056b3; /* Darker on hover */
+}
+
+

@@ -46,4 +46,19 @@ document.addEventListener("DOMContentLoaded", function () {
     
 });
 
+const cards = document.querySelectorAll('.card');
+
+cards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        gsap.to(card.querySelector('.card-front'), { rotationY: 180, duration: 0.6 });
+        gsap.to(card.querySelector('.card-back'), { rotationY: 0, duration: 0.6 });
+    });
+
+    card.addEventListener('mouseleave', () => {
+        gsap.to(card.querySelector('.card-front'), { rotationY: 0, duration: 0.35 }); // Faster rotation back
+        gsap.to(card.querySelector('.card-back'), { rotationY: 180, duration: 0.5 }); // Faster rotation back
+    });
+});
+
+
 
