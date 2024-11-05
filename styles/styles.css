@@ -216,7 +216,7 @@ header {
 /*******************  ABOUT CONTENT  ***********************/
 
 .about {
-    background-image: url("../assets/images/Untitled design (1).png");
+    background-image: url("../assets/images/gradient-about.png");
     min-height: 700px; /* Set a specific height */
     background-attachment: fixed; /* Create the parallax scrolling effect */
     background-position: center;
@@ -564,84 +564,109 @@ h2 {
 
 /******************************************************/
 
+/* Contact Us Section Styling */
 .contact-us {
-    background-color: #f8f9fa;
-    /* Light background */
-    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    background: linear-gradient(135deg, #4D94E6, #21DADB);
+    color: #fff;
     text-align: center;
 }
 
+.contact-us h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+/* Form Styling */
 .contact-form {
-    max-width: 600px;
-    /* Limit form width */
-    margin: 0 auto;
-    /* Center form */
+    width: 100%;
+    max-width: 500px;
     background-color: #ffffff;
-    /* Form background */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    color: #333;
 }
 
 .form-group {
-    margin-bottom: 15px;
-    text-align: left;
-    /* Align text to the left */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
 }
 
-label {
-    display: block;
+.form-group label {
+    font-size: 1em;
     margin-bottom: 5px;
     color: #333;
-    /* Label color */
 }
 
-input[type="text"],
-input[type="email"],
-textarea {
+.form-group input,
+.form-group textarea {
     width: 100%;
-    /* Full width */
     padding: 10px;
-    border: 1px solid #ccc;
-    /* Border color */
-    border-radius: 5px;
-    /* Rounded corners */
     font-size: 1em;
-    /* Font size */
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-textarea:focus {
-    border-color: #007bff;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    color: #333;
     outline: none;
+    transition: border-color 0.3s ease;
 }
 
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #21DADB;
+}
+
+/* Textarea Styling */
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Button Styling */
 .submit-btn {
-    background-color: #007bff;
-    /* Button color */
-    color: #ffffff;
-    /* Button text color */
-    padding: 10px 20px;
+    width: 100%;
+    padding: 12px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(135deg, #21DADB, #4D94E6);
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
-    /* Transition for hover */
+    transition: background 0.3s ease;
 }
 
 .submit-btn:hover {
-    background-color: #0056b3;
-    /* Darker on hover */
+    background: linear-gradient(135deg, #4D94E6, #21DADB);
 }
 
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .contact-us {
+        padding: 20px;
+    }
+
+    .contact-form {
+        padding: 20px;
+    }
+}
+
+/***************************/
 .footer {
-    background-color: #333;
+    background-color: white;
     /* Dark background for footer */
     color: white;
     text-align: center;
     padding: 20px 0;
+}
+
+.footer p{
+    color: #2379db;
 }
 
 .footer-content {
@@ -654,7 +679,7 @@ textarea:focus {
 }
 
 .footer-links a {
-    color: white;
+    color: #2379db;
     text-decoration: none;
     margin: 0 15px;
     transition: color 0.3s ease;
