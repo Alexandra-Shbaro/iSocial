@@ -1,4 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+    // Select the header element
+    const header = document.querySelector('header');
+
+    // Add a scroll event listener
+    window.addEventListener('scroll', () => {
+        // Check if the scroll position is greater than 0
+        if (window.scrollY > 0) {
+            // Change the header background when scrolled
+            header.classList.add("scrolled-header")
+        } else {
+            // Reset the background when at the top
+            header.classList.remove("scrolled-header")
+        }
+    });
+
     // Animate main heading
     gsap.from(".hero h1:first-of-type", {
         y: 50,
@@ -43,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ease: "power3.out"
     });
 
-    
+
 });
 
 const cards = document.querySelectorAll('.card');

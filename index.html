@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iSocial</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./styles/styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
@@ -15,101 +18,171 @@
 <body>
     <div class="header-wrapper">
         <header class="header">
-            <div class="logo">logo</div>
+            <div class="logo">
+                <a href="#">
+                    <img src="./assets/images/isocial-logo.png">
+                </a>
+            </div>
             <nav class="navbar">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Pages</a></li>
+                    <li>
+                        <a href="#">Home</a>
+                        <div class="underline"></div>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                        <div class="underline"></div>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                        <div class="underline"></div>
+                    </li>
+                    <li>
+                        <a href="#">Pages</a>
+                        <div class="underline"></div>
+                    </li>
                 </ul>
             </nav>
         </header>
-    
         <section class="hero">
-            <h1>DIGITAL SERVICES</h1>
-            <p>BUILDING YOUR EMPIRE DIGITALLY</p>
+            <h1>iSocial DIGITAL SERVICES</h1>
+            <p>At iSocial Digital Services, we believe in more than just digital solutions; we believe in creating
+                experiences that inspire and engage. Our mission is to bridge the gap between technology and human
+                connection, transforming ideas into impactful, memorable journeys for audiences everywhere.</p>
             <div class="buttons">
                 <button class="btn get-started">Get Started</button>
                 <button class="btn discover-more">Discover More</button>
             </div>
         </section>
     </div>
-    
+
     <!--about-->
     <section class="about">
         <div class="about-content">
             <h2>About Us</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>At iSocial Lebanon, we don’t just transform brands—we create captivating digital experiences that
+                resonate! Our cutting-edge marketing solutions are crafted to elevate your market presence, cultivate
+                authentic connections, and deliver impressive, measurable results. Let’s join forces to turn your vision
+                into something truly extraordinary!</p>
+        </div>
+        <div class="about-image">
+            <img src="./assets/images/advocacy.jpg">
         </div>
     </section>
 
     <!--expertise-->
     <section class="expertise">
-        <h2>Our Expertise</h2>
+        <h2 class="section-title">Our Expertise</h2>
         <div class="expertise-container">
             <div class="expertise-item">
-                <div class="expertise-title">Expertise 1</div>
-                <p class="expertise-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+                <div class="expertise-title">Brand Identity Development</div>
+                <p class="expertise-description">Make a lasting impression with our expert branding services. We
+                    collaborate with you to develop a distinctive brand identity that reflects your mission and
+                    resonates with your target audience. </p>
             </div>
             <div class="expertise-item">
-                <div class="expertise-title">Expertise 2</div>
-                <p class="expertise-description">Curabitur ac felis arcu. Sed tristique auctor mi, vel varius erat. Integer id eros nec erat tristique consectetur.</p>
+                <div class="expertise-title">Strategic Advertising</div>
+                <p class="expertise-description">Amplify your voice with our strategic advertising solutions. Leveraging
+                    data-driven insights, we craft impactful campaigns across multiple platforms to deliver your message
+                    to the right audience. Our focus is on maximizing reach and converting engagement into tangible
+                    results.</p>
             </div>
             <div class="expertise-item">
-                <div class="expertise-title">Expertise 3</div>
-                <p class="expertise-description">Proin aliquet dolor ac sapien dignissim, nec consectetur arcu tincidunt. Fusce sit amet turpis id magna viverra.</p>
+                <div class="expertise-title">3D & CGI Visualizations</div>
+                <p class="expertise-description">Our cutting-edge services bring your ideas to life, whether through
+                    product visualizations or immersive experiences, ensuring your offerings are memorable and engaging.
+                </p>
             </div>
             <div class="expertise-item">
-                <div class="expertise-title">Expertise 4</div>
-                <p class="expertise-description">Donec pulvinar, nulla vitae consequat pulvinar, risus leo aliquam risus, vel fringilla nulla justo ut libero.</p>
+                <div class="expertise-title">Professional Photography & Videography</div>
+                <p class="expertise-description">Our professional team captures the essence of your products and
+                    services, creating visuals that inform, engage, and inspire your audience.</p>
             </div>
             <div class="expertise-item">
-                <div class="expertise-title">Expertise 5</div>
-                <p class="expertise-description">Integer malesuada malesuada mi eget feugiat. Etiam finibus, lectus id pretium pellentesque, dui lacus congue nulla.</p>
+                <div class="expertise-title">Compelling Content Creation</div>
+                <p class="expertise-description">Engage your audience with tailored, high-quality content. Our team
+                    specializes in developing compelling blog posts, social media content, and marketing materials that
+                    enhance your brand voice and drive interaction.</p>
             </div>
             <div class="expertise-item">
-                <div class="expertise-title">Expertise 6</div>
-                <p class="expertise-description">Nullam eget vehicula velit. Sed vel vehicula lorem. Nunc scelerisque erat sit amet risus volutpat, ac consectetur.</p>
+                <div class="expertise-title">Social Media Strategy & Management</div>
+                <p class="expertise-description">Navigating social media can be complex. Our dedicated management
+                    services enhance your online presence, foster community engagement, and build brand loyalty. We
+                    create strategic content that sparks conversations and drives action.</p>
             </div>
             <div class="expertise-item">
-                <div class="expertise-title">Expertise 7</div>
-                <p class="expertise-description">Cras interdum ante sit amet vehicula vehicula. Suspendisse ultricies nulla libero, sit amet dictum nisl vehicula.</p>
+                <div class="expertise-title">Creative Graphic Design</div>
+                <p class="expertise-description">Enhance your visual identity with our exceptional graphic design
+                    services. Our creative team produces striking materials that effectively communicate your message
+                    across digital and print platforms, making a lasting impact on your audience.</p>
             </div>
             <div class="expertise-item">
-                <div class="expertise-title">Expertise 8</div>
-                <p class="expertise-description">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum ante.</p>
+                <div class="expertise-title">User-Centric UI/UX Design</div>
+                <p class="expertise-description">User experience is critical to digital success. Our UI/UX design
+                    services focus on creating intuitive and engaging interfaces that delight users and encourage
+                    conversions, ensuring your digital platforms are both functional and visually appealing.</p>
             </div>
         </div>
     </section>
 
     <!--whyUs-->
     <section class="why-us">
-        <h2>Why Choose Us?</h2>
+        <h2 class="section-title">Why Choose Us?</h2>
         <div class="why-us-content">
             <div class="reason">
-                <div class="icon"><i class="fas fa-star"></i></div>
-                <h3>Expert Team</h3>
-                <p>Our team of professionals is dedicated to delivering exceptional results.</p>
+                <div class="icon-wrapper">
+                    <div class="icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <h3>Industry Expertise</h3>
+                <p>Our multidisciplinary team brings extensive experience across various sectors, allowing us to
+                    understand and address your unique challenges effectively.</p>
             </div>
             <div class="reason">
-                <div class="icon"><i class="fas fa-clock"></i></div>
-                <h3>Timely Delivery</h3>
-                <p>We respect your deadlines and ensure timely delivery of all projects.</p>
+                <div class="icon-wrapper">
+                    <div class="icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                </div>
+                <h3>Innovative Solutions</h3>
+                <p>We stay ahead of the curve, utilizing the latest trends and technologies to deliver creative
+                    strategies that drive results and set your brand apart.</p>
             </div>
             <div class="reason">
-                <div class="icon"><i class="fas fa-thumbs-up"></i></div>
-                <h3>Customer Satisfaction</h3>
-                <p>Your satisfaction is our top priority, and we strive for excellence.</p>
+                <div class="icon-wrapper">
+                    <div class="icon">
+                        <i class="fas fa-thumbs-up"></i>
+                    </div>
+                </div>
+                <h3>Data-Driven Approach</h3>
+                <p>We leverage analytics to inform our strategies, continuously optimizing campaigns for maximum impact
+                    and ensuring you achieve your business objectives.</p>
             </div>
             <div class="reason">
-                <div class="icon"><i class="fas fa-comments"></i></div>
-                <h3>24/7 Support</h3>
-                <p>Our support team is available around the clock to assist you.</p>
+                <div class="icon-wrapper">
+                    <div class="icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                </div>
+                <h3>Collaborative Partnership</h3>
+                <p>We view ourselves as an extension of your team, fostering open communication and collaboration to
+                    ensure your vision guides every project.</p>
+            </div>
+            <div class="reason">
+                <div class="icon-wrapper">
+                    <div class="icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                </div>
+                <h3>Results-Focused Mindset</h3>
+                <p>Your success is our ultimate goal. We establish clear objectives and KPIs for each initiative,
+                    focusing on delivering measurable outcomes that contribute to your growth.</p>
             </div>
         </div>
-    </section>    
-    
+    </section>
+
+
 
     <!--delivery-->
     <section class="what-we-deliver">
@@ -141,7 +214,7 @@
             </div>
         </div>
     </section>
-    
+
 
     <!--methedology-->
     <section class="methodology-section">
@@ -214,8 +287,8 @@
                 </div>
             </div>
         </div>
-    </section>    
-    
+    </section>
+
 
     <!--contactUs-->
     <section class="contact-us">
@@ -236,7 +309,7 @@
             <button type="submit" class="submit-btn">Send Message</button>
         </form>
     </section>
-    
+
     <footer class="footer">
         <div class="footer-content">
             <p>&copy; 2024 Your Company Name. All Rights Reserved.</p>
@@ -247,7 +320,7 @@
             </div>
         </div>
     </footer>
-    
+
 </body>
 
 </html>

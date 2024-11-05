@@ -11,82 +11,139 @@ body {
     padding: 0;
     font-family: 'OTP', sans-serif;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 .header-wrapper {
-    min-height: 100vh; /* Ensures the wrapper takes up the full viewport height */
-    overflow: hidden; /* Prevents overflow from fixed backgrounds */
+    max-height: 100vh;
+    /* Ensures the wrapper takes up the full viewport height */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Prevents overflow from fixed backgrounds */
 
     /* Set the combined background with images and gradient */
-    background: 
-        linear-gradient(to bottom, #2379db, #4D94E6, #35BBDF, #21DADB), /* Gradient as the first layer */
-        url('../assets/images/waves.svg'), 
+    background:
+        linear-gradient(to bottom, #2379db, #4D94E6, #35BBDF, #21DADB),
+        /* Gradient as the first layer */
+        url('../assets/images/waves.svg'),
         url('../assets/images/Pattern.png');
 
     /* Background settings */
-    background-size: cover, cover, cover; /* Ensures all backgrounds cover the area */
-    background-attachment: fixed, scroll, scroll; /* Fixed for gradient to create the parallax effect */
-    background-position: center; /* Center all backgrounds */
-    background-blend-mode: multiply; /* Blend backgrounds together nicely */
+    background-size: cover, cover, cover;
+    /* Ensures all backgrounds cover the area */
+    background-attachment: fixed, scroll, scroll;
+    /* Fixed for gradient to create the parallax effect */
+    background-position: center;
+    /* Center all backgrounds */
+    background-blend-mode: multiply;
+    /* Blend backgrounds together nicely */
 }
 
 
 
 header {
+    width: 100%;
     display: flex;
-    justify-content: center; /* Center the contents */
+    justify-content: center;
     align-items: center;
-    padding: 20px;
-    position: relative; /* For positioning */
+    padding: 15px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all 0.3s ease-in, 0.3s ease-out;
+    z-index: 200;
+}
+
+.scrolled-header .navbar ul li a {
+    color:#35BBDF ; /* Change the font color to black */
+}
+
+
+.header .logo-white {
+    display: none;
+}
+
+.scrolled-header .logo-white {
+    display: block !important;
+}
+
+.scrolled-header .logo-black {
+    display: none !important
+}
+
+
+.scrolled-header {
+    background-color: white;
 }
 
 .logo {
-    position: absolute; /* Position the logo on the left */
-    left: 20px; /* Adjust as needed for spacing */
+    position: absolute;
+    left: 50px;
     font-size: 24px;
     font-weight: bold;
-    display:flex;
+    display: flex;
     justify-content: left;
+    cursor: pointer;
 }
 
-.navbar {
-    flex: 1; /* Allow navbar to grow and center */
+.logo a {
+    text-decoration: none;
+}
+
+.logo img {
+    margin-top: 10px;
+    margin-top: 10px;
+    width: 200px;
+    height: 200
+    px;
 }
 
 .navbar ul {
     list-style: none;
     display: flex;
-    justify-content: center; /* Center nav items */
+    justify-content: center;
 }
 
 .navbar ul li {
     margin: 0 50px;
+    position: relative;
 }
 
 .navbar ul li a {
     text-decoration: none;
     color: white;
     font-weight: 500;
-    font-size: 25px;
+    font-size: 20px;
 }
 
-.navbar ul li a::after {
-    content: '';
-    display: block;
-    height: 3px; /* Height of the underline */
-    background: white; /* Underline color */
-    width: 0; /* Start width of the underline */
-    transition: width 0.3s ease; /* Smooth transition */
+
+/* Underline div styling */
+.underline {
+    height: 3px;
+    width: 0;
+    background-color: #35BBDF;
+    border-radius: 5px;
+    transition: width 0.3s ease;
     position: absolute;
-    left: 50%; /* Center it horizontally */
-    bottom: 0; /* Position it at the bottom */
-    transform: translateX(-50%); /* Center the underline */
+    border-radius: 5px;
+    bottom: -7px;
+    left: 0;
 }
 
-.navbar ul li a:hover::after {
-    width: 100%; /* Expand underline to full width on hover */
+.scrolled-header .underline {
+    background-color: #2379db !important;
 }
 
+/* Hover effect on navbar link and underline */
+.navbar ul li a:hover {
+    color: #ddd;
+}
+
+.navbar ul li:hover .underline {
+    width: 100%;
+}
 
 .contact-info {
     display: flex;
@@ -103,6 +160,7 @@ header {
     background-position: center, center;
     background-repeat: no-repeat;
     height: 100vh;
+    gap: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -112,12 +170,11 @@ header {
 
 .hero h1 {
     font-size: 48px;
-    margin-bottom: 10px;
 }
 
 .hero p {
     font-size: 20px;
-    margin-bottom: 20px;
+    max-width: 70%;
 }
 
 .buttons {
@@ -127,98 +184,111 @@ header {
 }
 
 .btn {
-    padding: 15px 30px;
+    padding: 18px 30px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .get-started {
-    background-color: #007bff;
-    /* Example button color */
+    background-color: #000000;
+    border: 2px solid black;
     color: white;
+    transition: all 0.3s ease, background-color 0.3s ease;
+}
+
+.get-started:hover {
+    border-color: white;
 }
 
 .discover-more {
     background-color: transparent;
     color: white;
     border: 2px solid white;
-    /* Border for this button */
+    transition: all 0.3s ease, border-color 0.3s ease;
 }
 
-/******************************/
+.discover-more:hover {
+    color: #000000;
+    border-color: #000000;
+}
 
+/*******************  ABOUT CONTENT  ***********************/
 
-
-/**********************************************************************/
 .about {
     background-size: cover;
     background-position: center;
-    padding: 60px 20px;
+    padding: 30px 20px;
     color: white;
     text-align: center;
-
-    min-height: 100%;
-    background:  white;
+    height: auto;
+    background-image: url('../assets/images/about-us-bg.jpg');
     background-size: cover;
     background-blend-mode: multiply;
+    display:flex;
 }
 
 .about-content {
-    max-width: 800px;
+    max-width: 400px;
     margin: 0 auto;
-    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better readability */
-    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.308);
+    /* Dark overlay for better readability */
+    padding: 20px;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 .about h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
+    font-size: 2em;
 }
 
 .about p {
-    font-size: 1.2em;
-    line-height: 1.6;
+    font-size: 1em;
+    line-height: 1.8em;
 }
+
+
+
 
 
 /******************************************************/
 
-.expertise{
-    min-height: 100vh; /* Ensure this section takes up the full viewport height */
-    overflow: hidden; /* Prevents any overflow from fixed backgrounds */
+.expertise {
+    max-height: 100%;
+    overflow: hidden;
+    background:
+        linear-gradient(to bottom, #2379db, #4D94E6, #35BBDF, #21DADB),
+        /* Gradient as the first layer */
+        url('../assets/images/waves.svg');
 
-    /* Set the combined background with gradient and the waves image */
-    background: 
-        linear-gradient(to bottom, #2379db, #4D94E6, #35BBDF, #21DADB), /* Gradient as the first layer */
-        url('../assets/images/waves.svg'); /* Only the waves image */
-
-    /* Background settings */
-    background-size: cover, cover; /* Ensure all backgrounds cover the area */
-    background-attachment: fixed, scroll; /* Fixed for gradient to create the parallax effect */
-    background-position: center; /* Center the backgrounds */
-    background-blend-mode: multiply; /* Blend the gradient and image nicely */
+    background-size: cover, cover;
+    background-attachment: fixed, scroll;
+    background-position: center;
+    background-blend-mode: multiply;
 }
 
 .expertise-container {
-    max-width: 1000px;
-    margin: 20px;
+    width: 90%;
+    margin: auto;
     display: grid;
+    justify-content: center;
     grid-template-columns: repeat(4, 1fr);
-    /* Four columns across */
     gap: 20px;
-    
+    padding: 30px;
+
 }
 
 /* Expertise Item Styling */
 .expertise-item {
     background-color: #ffffff;
-    /* White background for contrast */
     padding: 20px;
+    max-width: 250px;
     border-radius: 8px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    /* Subtle shadow for depth */
     text-align: center;
     transition: transform 0.3s ease;
 }
@@ -229,10 +299,10 @@ header {
 }
 
 /* Heading Style */
-h2 {
+.section-title {
     text-align: center;
-    margin-bottom: 20px;
     color: #333;
+    font-size: 2.5em;
 }
 
 /* Item Heading and Description */
@@ -265,66 +335,68 @@ h2 {
 
 /**********************************************************/
 .why-us {
-    background: linear-gradient(135deg, #21DADB 0%, #35BBDF 50%, #4D94E6 100%); /* Gradient background */
-    padding: 60px 20px; /* Padding for spacing */
-    text-align: center; /* Center text */
-    color: #ffffff; /* Light text color */
+    background: linear-gradient(135deg, #21DADB 0%, #35BBDF 50%, #4D94E6 100%);
+    padding: 60px 20px;
+    text-align: center;
+    color: #ffffff;
 }
 
-.why-us h2 {
-    font-size: 2.5em;
-    margin-bottom: 30px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Text shadow for effect */
-}
+
 
 .why-us-content {
-    display: flex; /* Horizontal layout */
-    justify-content: space-around; /* Even spacing */
-    flex-wrap: wrap; /* Wrap items on smaller screens */
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 30px;
+    gap: 20px;
 }
 
 .reason {
-    flex: 1 1 200px; /* Responsive flex item */
-    padding: 20px; /* Inner padding */
-    margin: 10px; /* Space between items */
-    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
-    border-radius: 15px; /* Rounded corners */
-    transition: transform 0.3s ease; /* Smooth transform */
-    position: relative; /* For pseudo-element positioning */
+    flex: 1 1 200px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+    position: relative;
 }
 
 .reason:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
+    transform: scale(1.05);
+}
+
+
+.icon-wrapper {
+    position: absolute;
+    width: 90%;
+    top: -40px;
+    display: flex;
+    justify-content: center;
 }
 
 .icon {
-    font-size: 3em; /* Larger icon size */
-    margin-bottom: 15px; /* Space below icon */
-    position: relative; /* For positioning pseudo-elements */
+    opacity: 0.5;
+    font-size: 2.5em;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 10px;
+    border-radius: 100%;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.icon::before {
-    content: ''; /* Pseudo-element for decoration */
-    position: absolute; /* Absolute positioning */
-    width: 80px; /* Width of the decorative shape */
-    height: 80px; /* Height of the decorative shape */
-    background-color: rgba(255, 255, 255, 0.3); /* Light background */
-    border-radius: 50%; /* Circle shape */
-    top: 10%; /* Positioning */
-    left: 10%; /* Positioning */
-    z-index: 0; /* Behind the icon */
-}
+
 
 h3 {
     font-size: 1.5em;
-    margin-bottom: 10px; /* Space below heading */
-    z-index: 1; /* Above the pseudo-element */
+    z-index: 1;
 }
 
 p {
-    color: #ffffff; /* Light text for description */
-    line-height: 1.4; /* Improved readability */
-    z-index: 1; /* Above the pseudo-element */
+    color: #ffffff;
+    line-height: 1.4;
+    z-index: 1;
 }
 
 
@@ -344,55 +416,60 @@ p {
 
 .delivery-item {
     position: relative;
-    width: 200px; /* Set your card width */
-    height: 200px; /* Set your card height */
+    width: 200px;
+    height: 200px;
     color: #fff;
-    border-radius: 10px;
+    border-radius: 100%;
     overflow: hidden;
     display: flex;
     align-items: flex-end;
     padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    background-size: cover; /* Make sure the background covers the entire card */
-    background-position: center; /* Center the image */
-    background-image: url('../assets/images/circle.png'); /* Default background image */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    background-size: cover;
+    background-position: center;
+    background-image: url('../assets/images/circle.png');
 }
 
 .delivery-item.item1 {
-    background-image: url('../assets/images/image1.jpg'); /* Specific background image for item1 */
+    background-image: url('../assets/images/image1.jpg');
 }
 
 .delivery-item.item2 {
-    background-image: url('../assets/images/image2.jpg'); /* Specific background image for item2 */
+    background-image: url('../assets/images/image2.jpg');
 }
 
 .delivery-item.item3 {
-    background-image: url('../assets/images/image3.jpg'); /* Specific background image for item3 */
+    background-image: url('../assets/images/image3.jpg');
 }
 
 .delivery-item.item4 {
-    background-image: url('../assets/images/image4.jpg'); /* Specific background image for item4 */
+    background-image: url('../assets/images/image4.jpg');
 }
 
-/**********************/
+/********* METHODOLOGY SECTION ***********/
 .methodology-section {
     padding: 40px;
-    background-color: #f0f4f8; /* Light background */
+    background-color: #f0f4f8;
 }
 
 .methodology-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns layout */
-    gap: 20px; /* Space between items */
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columns layout */
+    gap: 20px;
+    /* Space between items */
     max-width: 1200px;
-    margin: 0 auto; /* Center the container */
+    margin: 0 auto;
+    /* Center the container */
 }
 
 .card {
+    display: flex;
+    align-items: center;
     position: relative;
     width: 100%;
-    height: 200px; /* Set your card height */
-    perspective: 1000px; /* Add perspective for the 3D effect */
+    height: 200px;
+    perspective: 1000px;
 }
 
 .card-front,
@@ -402,12 +479,14 @@ p {
     height: 100%;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    backface-visibility: hidden; /* Hide the back side when not flipped */
+    backface-visibility: hidden;
+    /* Hide the back side when not flipped */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    transition: transform 0.6s; /* Animation duration */
+    transition: transform 0.6s;
+    /* Animation duration */
 }
 
 .card-front {
@@ -415,23 +494,30 @@ p {
 }
 
 .card-back {
-    background-color: #007bff; /* Back card color */
-    color: #fff; /* Text color */
-    transform: rotateY(180deg); /* Start rotated */
+    background-color: #007bff;
+    /* Back card color */
+    color: #fff;
+    /* Text color */
+    transform: rotateY(180deg);
+    /* Start rotated */
 }
 
 .card:hover .card-front {
-    transform: rotateY(180deg); /* Flip the front */
+    transform: rotateY(180deg);
+    /* Flip the front */
 }
 
 .card:hover .card-back {
-    transform: rotateY(0deg); /* Show the back */
+    transform: rotateY(0deg);
+    /* Show the back */
 }
 
 .methodology-icon {
-    font-size: 2em; /* Large icon size */
-    margin-bottom: 10px; /* Space below the icon */
-    color: #007bff; /* Icon color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: #007bff;
 }
 
 h2 {
@@ -444,15 +530,19 @@ h2 {
 /******************************************************/
 
 .contact-us {
-    background-color: #f8f9fa; /* Light background */
+    background-color: #f8f9fa;
+    /* Light background */
     padding: 40px 20px;
     text-align: center;
 }
 
 .contact-form {
-    max-width: 600px; /* Limit form width */
-    margin: 0 auto; /* Center form */
-    background-color: #ffffff; /* Form background */
+    max-width: 600px;
+    /* Limit form width */
+    margin: 0 auto;
+    /* Center form */
+    background-color: #ffffff;
+    /* Form background */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -460,49 +550,60 @@ h2 {
 
 .form-group {
     margin-bottom: 15px;
-    text-align: left; /* Align text to the left */
+    text-align: left;
+    /* Align text to the left */
 }
 
 label {
     display: block;
     margin-bottom: 5px;
-    color: #333; /* Label color */
+    color: #333;
+    /* Label color */
 }
 
 input[type="text"],
 input[type="email"],
 textarea {
-    width: 100%; /* Full width */
+    width: 100%;
+    /* Full width */
     padding: 10px;
-    border: 1px solid #ccc; /* Border color */
-    border-radius: 5px; /* Rounded corners */
-    font-size: 1em; /* Font size */
+    border: 1px solid #ccc;
+    /* Border color */
+    border-radius: 5px;
+    /* Rounded corners */
+    font-size: 1em;
+    /* Font size */
 }
 
 input[type="text"]:focus,
 input[type="email"]:focus,
 textarea:focus {
-    border-color: #007bff; /* Focus border color */
-    outline: none; /* Remove outline */
+    border-color: #007bff;
+    outline: none;
 }
 
 .submit-btn {
-    background-color: #007bff; /* Button color */
-    color: #ffffff; /* Button text color */
+    background-color: #007bff;
+    /* Button color */
+    color: #ffffff;
+    /* Button text color */
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
-    transition: background-color 0.3s ease; /* Transition for hover */
+    transition: background-color 0.3s ease;
+    /* Transition for hover */
 }
 
 .submit-btn:hover {
-    background-color: #0056b3; /* Darker on hover */
+    background-color: #0056b3;
+    /* Darker on hover */
 }
 
 .footer {
-    background-color: #333; /* Dark background for footer */
+    background-color: #333;
+    /* Dark background for footer */
     color: white;
     text-align: center;
     padding: 20px 0;
@@ -525,6 +626,6 @@ textarea:focus {
 }
 
 .footer-links a:hover {
-    color: #007bff; /* Change link color on hover */
+    color: #007bff;
+    /* Change link color on hover */
 }
-
