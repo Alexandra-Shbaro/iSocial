@@ -14,14 +14,23 @@ body {
 }
 
 .header-wrapper {
-    min-height: 100%;
-    background: url('../assets/images/Pattern.png'), 
-                url('../assets/images/waves.svg'),
-                linear-gradient(to bottom, #2379db, #4D94E6, #35BBDF, #21DADB)
-                ;
-    background-size: cover;
-    background-blend-mode: multiply;
+    min-height: 100vh; /* Ensures the wrapper takes up the full viewport height */
+    overflow: hidden; /* Prevents overflow from fixed backgrounds */
+
+    /* Set the combined background with images and gradient */
+    background: 
+        linear-gradient(to bottom, #2379db, #4D94E6, #35BBDF, #21DADB), /* Gradient as the first layer */
+        url('../assets/images/waves.svg'), 
+        url('../assets/images/Pattern.png');
+
+    /* Background settings */
+    background-size: cover, cover, cover; /* Ensures all backgrounds cover the area */
+    background-attachment: fixed, scroll, scroll; /* Fixed for gradient to create the parallax effect */
+    background-position: center; /* Center all backgrounds */
+    background-blend-mode: multiply; /* Blend backgrounds together nicely */
 }
+
+
 
 header {
     display: flex;
@@ -94,7 +103,6 @@ header {
     background-position: center, center;
     background-repeat: no-repeat;
     height: 100vh;
-    /* Full height */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -138,6 +146,10 @@ header {
     /* Border for this button */
 }
 
+/******************************/
+
+
+
 /**********************************************************************/
 .about {
     background-size: cover;
@@ -145,6 +157,11 @@ header {
     padding: 60px 20px;
     color: white;
     text-align: center;
+
+    min-height: 100%;
+    background:  white;
+    background-size: cover;
+    background-blend-mode: multiply;
 }
 
 .about-content {
@@ -168,6 +185,22 @@ header {
 
 /******************************************************/
 
+.expertise{
+    min-height: 100vh; /* Ensure this section takes up the full viewport height */
+    overflow: hidden; /* Prevents any overflow from fixed backgrounds */
+
+    /* Set the combined background with gradient and the waves image */
+    background: 
+        linear-gradient(to bottom, #2379db, #4D94E6, #35BBDF, #21DADB), /* Gradient as the first layer */
+        url('../assets/images/waves.svg'); /* Only the waves image */
+
+    /* Background settings */
+    background-size: cover, cover; /* Ensure all backgrounds cover the area */
+    background-attachment: fixed, scroll; /* Fixed for gradient to create the parallax effect */
+    background-position: center; /* Center the backgrounds */
+    background-blend-mode: multiply; /* Blend the gradient and image nicely */
+}
+
 .expertise-container {
     max-width: 1000px;
     margin: 20px;
@@ -175,7 +208,7 @@ header {
     grid-template-columns: repeat(4, 1fr);
     /* Four columns across */
     gap: 20px;
-    /* Space between items */
+    
 }
 
 /* Expertise Item Styling */
