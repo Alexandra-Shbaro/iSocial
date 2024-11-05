@@ -217,8 +217,10 @@ header {
 
 .about {
     background-image: url("../assets/images/gradient-about.png");
-    min-height: 700px; /* Set a specific height */
-    background-attachment: fixed; /* Create the parallax scrolling effect */
+    min-height: 700px;
+    /* Set a specific height */
+    background-attachment: fixed;
+    /* Create the parallax scrolling effect */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -228,46 +230,46 @@ header {
 }
 
 .about-container {
-    max-width: 1200px; /* Increased width for the container */
-    margin: 0 auto; /* Center the container */
+    max-width: 1200px;
+    /* Increased width for the container */
+    margin: 0 auto;
+    /* Center the container */
 }
 
-.about h1 {
-    font-size: 40px;
-    color: #0d47a1;
-    font-weight: bold;
-    margin-bottom: 30px; /* Space between title and cards */
-}
 
 .about h2 {
-    font-size: 24px; /* Size for the subheadings */
+    font-size: 24px;
     color: #0d47a1;
-    margin: 30px 0 10px; /* Space around the subheadings */
+    margin: 30px 0 10px;
 }
 
 .about-card {
-    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent for effect */
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    flex: 1; /* Allow cards to grow equally */
-    max-width: 250px; /* Set a max-width for the cards */
-    display: flex; /* Use flexbox for card content */
-    flex-direction: column; /* Stack content vertically within cards */
-    align-items: center; /* Center card content */
-    margin: 10px; /* Space around cards */
-    opacity: 0; /* Initial opacity for animation */
-    transform: scale(0.9); /* Initial scale for pop-in effect */
+    flex: 1;
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    opacity: 0;
+    transform: scale(0.9);
 }
 
 .about-container {
-    display: flex; /* Flex layout for alignment */
-    flex-direction: column; /* Stack rows vertically */
-    align-items: center; /* Center cards and headings */
+    display: flex;
+    /* Flex layout for alignment */
+    flex-direction: column;
+    /* Stack rows vertically */
+    align-items: center;
+    /* Center cards and headings */
 }
 
 .about-card-icon {
-    font-size: 40px; /* Adjust icon size if needed */
+    font-size: 40px;
+    /* Adjust icon size if needed */
 }
 
 .about-card p {
@@ -275,13 +277,16 @@ header {
     line-height: 1.6;
     color: #455a64;
     margin-bottom: 20px;
-    text-align: center; /* Center text in cards */
+    text-align: center;
+    /* Center text in cards */
 }
 
 @media (min-width: 768px) {
     .about-cards-row {
-        display: flex; /* Use flexbox for card row */
-        justify-content: center; /* Center the card row */
+        display: flex;
+        /* Use flexbox for card row */
+        justify-content: center;
+        /* Center the card row */
     }
 }
 
@@ -292,7 +297,6 @@ header {
 
 /* Main Section Styling */
 .expertise {
-    max-height: 100%;
     overflow: hidden;
     background: linear-gradient(to bottom, #4D94E6, #35BBDF, #21DADB);
     background-size: cover;
@@ -306,9 +310,9 @@ header {
 }
 
 /* Title Styling */
-.section-title {
+.title {
     text-align: center;
-    color: #333;
+    color: black;
     font-size: 2.5em;
     margin-bottom: 20px;
 }
@@ -319,14 +323,17 @@ header {
     display: flex;
     flex-wrap: wrap;
     gap: 50px;
+    margin-top: 30px;
 }
 
 /* Card Styling */
 .expertise-item {
     background-color: #ffffff;
     padding: 20px;
-    flex: 1 1 calc(25% - 20px); /* Four cards per row */
-    min-width: 250px; /* Ensures cards don’t shrink too small */
+    flex: 1 1 calc(25% - 20px);
+    /* Four cards per row */
+    min-width: 250px;
+    /* Ensures cards don’t shrink too small */
     border-radius: 8px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -335,11 +342,11 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    min-height: 300px;
 }
 
 .expertise-item:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
+    transform: scale(1.05);
+    /* Slight zoom on hover */
 }
 
 /* Card Title and Description Styling */
@@ -347,7 +354,8 @@ header {
     font-size: 1.2em;
     color: #007bff;
     margin: 0;
-    margin-bottom: 10px; /* Space below the title */
+    margin-bottom: 10px;
+    /* Space below the title */
 }
 
 .expertise-description {
@@ -360,13 +368,15 @@ header {
 /* Responsive Styling */
 @media (max-width: 992px) {
     .expertise-item {
-        flex: 1 1 calc(50% - 20px); /* Two items per row on medium screens */
+        flex: 1 1 calc(50% - 20px);
+        /* Two items per row on medium screens */
     }
 }
 
 @media (max-width: 600px) {
     .expertise-item {
-        flex: 1 1 calc(100% - 20px); /* One item per row on smaller screens */
+        flex: 1 1 calc(100% - 20px);
+        /* One item per row on smaller screens */
     }
 }
 
@@ -377,7 +387,15 @@ header {
 
 /**********************************************************/
 .why-us {
-    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    background-image: url("../assets/images/gradient-about.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     padding: 60px 20px;
     text-align: center;
     color: #ffffff;
@@ -414,9 +432,9 @@ header {
 }
 
 .icon {
-    opacity: 0.5;
+    opacity: 0.8;
     font-size: 2.5em;
-    background-color: rgba(59, 5, 145, 0.774);
+    background-color: rgba(55, 0, 255, 0.959);
     padding: 10px;
     border-radius: 100%;
     height: 60px;
@@ -442,12 +460,11 @@ p {
 
 .what-we-deliver {
     text-align: center;
-    margin: 40px 0;
     background-color: #007bff;
-    padding:40px;
+    padding: 40px;
 }
 
-.what-we-deliver h3{
+.what-we-deliver h3 {
     justify-content: center;
     align-items: center;
 }
@@ -484,7 +501,11 @@ p {
 /********* METHODOLOGY SECTION ***********/
 .methodology-section {
     padding: 40px;
-    background-color: #f0f4f8;
+    background-image: url("../assets/images/gradient-about.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .methodology-container {
@@ -665,7 +686,7 @@ h2 {
     padding: 20px 0;
 }
 
-.footer p{
+.footer p {
     color: #2379db;
 }
 
