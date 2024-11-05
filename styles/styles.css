@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'OTP';
-    src: url('/fonts/OTP.otf') format('opentype');
+    src: url('../assets/fonts/Helvetica\ Neue.otf') format('opentype');
     /* Specify the path to your OTF file */
     font-weight: normal;
     font-style: normal;
@@ -14,39 +14,70 @@ body {
 }
 
 .header-wrapper {
-    background: linear-gradient(to bottom, #4D94E6, #35BBDF, #21DADB);
     min-height: 100%;
-    background: url('../assets/images/Pattern.png'), linear-gradient(to bottom, #2379db, #4D94E6, #35BBDF, #21DADB);
+    background: url('../assets/images/Pattern.png'), 
+                url('../assets/images/waves.svg'),
+                linear-gradient(to bottom, #2379db, #4D94E6, #35BBDF, #21DADB)
+                ;
     background-size: cover;
     background-blend-mode: multiply;
 }
 
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Center the contents */
     align-items: center;
     padding: 20px;
+    position: relative; /* For positioning */
 }
 
 .logo {
+    position: absolute; /* Position the logo on the left */
+    left: 20px; /* Adjust as needed for spacing */
     font-size: 24px;
     font-weight: bold;
+    display:flex;
+    justify-content: left;
+}
+
+.navbar {
+    flex: 1; /* Allow navbar to grow and center */
 }
 
 .navbar ul {
     list-style: none;
     display: flex;
+    justify-content: center; /* Center nav items */
 }
 
 .navbar ul li {
-    margin: 0 15px;
+    margin: 0 50px;
 }
 
 .navbar ul li a {
     text-decoration: none;
     color: white;
     font-weight: 500;
+    font-size: 25px;
 }
+
+.navbar ul li a::after {
+    content: '';
+    display: block;
+    height: 3px; /* Height of the underline */
+    background: white; /* Underline color */
+    width: 0; /* Start width of the underline */
+    transition: width 0.3s ease; /* Smooth transition */
+    position: absolute;
+    left: 50%; /* Center it horizontally */
+    bottom: 0; /* Position it at the bottom */
+    transform: translateX(-50%); /* Center the underline */
+}
+
+.navbar ul li a:hover::after {
+    width: 100%; /* Expand underline to full width on hover */
+}
+
 
 .contact-info {
     display: flex;
@@ -57,15 +88,6 @@ header {
     margin-right: 20px;
 }
 
-.search-button {
-    background-color: #ff4757;
-    /* Example button color */
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-}
 
 .hero {
     background-size: cover, auto;

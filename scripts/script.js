@@ -50,8 +50,8 @@ const cards = document.querySelectorAll('.card');
 
 cards.forEach(card => {
     card.addEventListener('mouseenter', () => {
-        gsap.to(card.querySelector('.card-front'), { rotationY: 180, duration: 0.6 });
-        gsap.to(card.querySelector('.card-back'), { rotationY: 0, duration: 0.6 });
+        gsap.to(card.querySelector('.card-front'), { rotationY: 180, duration: 0.35 });
+        gsap.to(card.querySelector('.card-back'), { rotationY: 0, duration: 0.5 });
     });
 
     card.addEventListener('mouseleave', () => {
