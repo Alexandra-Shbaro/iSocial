@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
         ease: "power3.out"
     });
 
-    // Animate subheading paragraph
     gsap.from(".hero p", {
         y: 50,
         opacity: 0,
@@ -29,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
         ease: "power3.out"
     });
 
-    // Animate third heading
     gsap.from(".hero h1:nth-of-type(2)", {
         y: 50,
         opacity: 0,
@@ -58,16 +56,15 @@ document.addEventListener("DOMContentLoaded", function () {
     // Animate about cards in a staggered manner when they enter the viewport
     const cards = document.querySelectorAll(".about-card");
     const options = {
-        root: null, // Use the viewport as the root
+        root: null,
         rootMargin: "0px",
-        threshold: 0.1 // Trigger when at least 10% of the cards are visible
+        threshold: 0.1
     };
 
     const animateCards = (entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Use a timeline for staggered animations
-                const timeline = gsap.timeline(); // Start a new timeline for each entry
+                const timeline = gsap.timeline();
 
                 cards.forEach((card, index) => {
                     timeline.fromTo(card,
@@ -82,12 +79,12 @@ document.addEventListener("DOMContentLoaded", function () {
                             scale: 1,
                             duration: 1,
                             ease: "power2.out",
-                            delay: index * 0.3 // Staggering based on index
+                            delay: index * 0.3
                         }
                     );
                 });
 
-                // Unobserve the cards once they have been animated
+
                 observer.unobserve(entry.target);
             }
         });
@@ -95,12 +92,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const observer = new IntersectionObserver(animateCards, options);
 
-    // Observe each card
     cards.forEach(card => {
         observer.observe(card);
     });
 
-    // Card flip effect (if applicable)
     const flipCards = document.querySelectorAll('.card');
 
     flipCards.forEach(card => {
@@ -115,7 +110,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Animate "Why Choose Us" cards when section is in viewport
     const whyUsSection = document.querySelector(".why-us");
     const reasons = document.querySelectorAll(".why-us .reason");
 
@@ -124,16 +118,15 @@ document.addEventListener("DOMContentLoaded", function () {
             if (entry.isIntersecting) {
                 gsap.from(reasons, {
                     opacity: 0,
-                    x: -50, // Adjust to -50 for sliding from left or y: 50 for sliding from the bottom
+                    x: -50,
                     duration: 1,
-                    stagger: 0.3, // Staggers the animation for each card by 0.3 seconds
+                    stagger: 0.3,
                     ease: "power3.out"
                 });
-                observer.unobserve(entry.target); // Unobserve after animating
+                observer.unobserve(entry.target);
             }
         });
     }, { threshold: 0.1 });
 
-    // Observe the "Why Choose Us" section
     whyUsObserver.observe(whyUsSection);
 });

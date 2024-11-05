@@ -1,7 +1,6 @@
 @font-face {
     font-family: 'OTP';
     src: url('../assets/fonts/Helvetica\ Neue.otf') format('opentype');
-    /* Specify the path to your OTF file */
     font-weight: normal;
     font-style: normal;
 }
@@ -25,15 +24,10 @@ body {
         url('../assets/images/waves.svg'),
         url('../assets/images/Pattern.png');
 
-    /* Background settings */
     background-size: cover, cover, cover;
-    /* Ensures all backgrounds cover the area */
     background-attachment: fixed, scroll, scroll;
-    /* Fixed for gradient to create the parallax effect */
     background-position: center;
-    /* Center all backgrounds */
     background-blend-mode: multiply;
-    /* Blend backgrounds together nicely */
 }
 
 
@@ -54,7 +48,6 @@ header {
 
 .scrolled-header .navbar ul li a {
     color: #35BBDF;
-    /* Change the font color to black */
 }
 
 
@@ -132,7 +125,6 @@ header {
     background-color: #2379db !important;
 }
 
-/* Hover effect on navbar link and underline */
 .navbar ul li a:hover {
     color: #ddd;
 }
@@ -176,7 +168,6 @@ header {
 .buttons {
     display: flex;
     gap: 15px;
-    /* Space between buttons */
 }
 
 .btn {
@@ -214,9 +205,7 @@ header {
 .about {
     background-image: url("../assets/images/gradient-about.png");
     min-height: 700px;
-    /* Set a specific height */
     background-attachment: fixed;
-    /* Create the parallax scrolling effect */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -227,9 +216,8 @@ header {
 
 .about-container {
     max-width: 1200px;
-    /* Increased width for the container */
     margin: 0 auto;
-    /* Center the container */
+    
 }
 
 
@@ -256,16 +244,12 @@ header {
 
 .about-container {
     display: flex;
-    /* Flex layout for alignment */
     flex-direction: column;
-    /* Stack rows vertically */
     align-items: center;
-    /* Center cards and headings */
 }
 
 .about-card-icon {
     font-size: 40px;
-    /* Adjust icon size if needed */
 }
 
 .about-card p {
@@ -274,14 +258,12 @@ header {
     color: #455a64;
     margin-bottom: 20px;
     text-align: center;
-    /* Center text in cards */
 }
 
 
 
-/******************************************************/
+/************************EXPERTISE CONTENT******************************/
 
-/* Main Section Styling */
 .expertise {
     overflow: hidden;
     background: linear-gradient(to bottom, #4D94E6, #35BBDF, #21DADB);
@@ -295,7 +277,6 @@ header {
     padding: 40px 0;
 }
 
-/* Title Styling */
 .title {
     text-align: center;
     color: black;
@@ -303,7 +284,6 @@ header {
     margin-bottom: 20px;
 }
 
-/* Expertise Container Styling */
 .expertise-container {
     width: 80%;
     display: flex;
@@ -312,14 +292,11 @@ header {
     margin-top: 30px;
 }
 
-/* Card Styling */
 .expertise-item {
     background-color: #ffffff;
     padding: 20px;
     flex: 1 1 calc(25% - 20px);
-    /* Four cards per row */
     min-width: 250px;
-    /* Ensures cards don’t shrink too small */
     border-radius: 8px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -334,7 +311,6 @@ header {
     transform: scale(1.05);
 }
 
-/* Card Title and Description Styling */
 .expertise-title {
     font-size: 1.2em;
     color: #35BBDF;
@@ -349,11 +325,9 @@ header {
     margin-top: 10px;
 }
 
-/* Responsive Styling */
 @media (max-width: 992px) {
     .expertise-item {
         flex: 1 1 calc(50% - 20px);
-        /* Two items per row on medium screens */
     }
 
     .navbar ul li {
@@ -395,7 +369,6 @@ header {
 @media (max-width: 600px) {
     .expertise-item {
         flex: 1 1 calc(100% - 20px);
-        /* One item per row on smaller screens */
     }
 
     .navbar ul li {
@@ -440,11 +413,7 @@ header {
 }
 
 
-
-/* Responsive Adjustment */
-
-
-/**********************************************************/
+/**************************WHY US CONTENT********************************/
 .why-us {
     display: flex;
     flex-direction: column;
@@ -515,7 +484,7 @@ p {
 }
 
 
-/******************************************/
+/*********************WHAT WE DELIVER CONTENT*********************/
 
 .what-we-deliver {
     background-image: url("../assets/images/final-polygon-bg.png");
@@ -601,7 +570,6 @@ p {
     justify-content: center;
     text-align: center;
     transition: transform 0.6s;
-    /* Animation duration */
 }
 
 .card-front {
@@ -610,21 +578,16 @@ p {
 
 .card-back {
     background-color: #35BBDF;
-    /* Back card color */
     color: #fff;
-    /* Text color */
     transform: rotateY(180deg);
-    /* Start rotated */
 }
 
 .card:hover .card-front {
     transform: rotateY(180deg);
-    /* Flip the front */
 }
 
 .card:hover .card-back {
     transform: rotateY(0deg);
-    /* Show the back */
 }
 
 .methodology-icon {
@@ -642,9 +605,8 @@ h2 {
 }
 
 
-/******************************************************/
+/*********************CONTACT US CONTENT*********************************/
 
-/* Contact Us Section Styling */
 .contact-us {
     display: flex;
     flex-direction: column;
@@ -666,7 +628,6 @@ h2 {
     color: #fff;
 }
 
-/* Form Styling */
 .contact-form {
     width: 30%;
     background-color: #ffffff;
@@ -709,7 +670,6 @@ h2 {
 }
 
 
-/* Button Styling */
 .submit-btn {
     width: 100%;
     padding: 12px;
@@ -726,7 +686,6 @@ h2 {
     background: linear-gradient(135deg, #4D94E6, #21DADB);
 }
 
-/* Responsive Adjustments */
 @media (max-width: 768px) {
     .contact-us {
         padding: 20px;
@@ -773,10 +732,9 @@ h2 {
     }
 }
 
-/***************************/
+/*************FOOTER**************/
 .footer {
     background-color: white;
-    /* Dark background for footer */
     color: white;
     text-align: center;
     padding: 20px 0;
@@ -804,5 +762,4 @@ h2 {
 
 .footer-links a:hover {
     color: #007bff;
-    /* Change link color on hover */
 }
