@@ -1,17 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
-
     // Select the header element
     const header = document.querySelector('header');
 
-    // Add a scroll event listener
+    // Add a scroll event listener to change header background
     window.addEventListener('scroll', () => {
-        // Check if the scroll position is greater than 0
         if (window.scrollY > 0) {
-            // Change the header background when scrolled
-            header.classList.add("scrolled-header")
+            header.classList.add("scrolled-header");
         } else {
-            // Reset the background when at the top
-            header.classList.remove("scrolled-header")
+            header.classList.remove("scrolled-header");
         }
     });
 
@@ -44,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Animate buttons to slide in horizontally
     gsap.from(".hero .get-started", {
-        x: -100, // Start from left
+        x: -100,
         opacity: 0,
         duration: 1,
         delay: 1.5,
@@ -52,29 +48,70 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     gsap.from(".hero .discover-more", {
-        x: 100, // Start from right
+        x: 100,
         opacity: 0,
         duration: 1,
         delay: 1.5,
         ease: "power3.out"
     });
 
+    // Animate about cards in a staggered manner when they enter the viewport
+    const cards = document.querySelectorAll(".about-card");
+    const options = {
+        root: null, // Use the viewport as the root
+        rootMargin: "0px",
+        threshold: 0.1 // Trigger when at least 10% of the cards are visible
+    };
 
-});
+    const animateCards = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Use a timeline for staggered animations
+                const timeline = gsap.timeline(); // Start a new timeline for each entry
 
-const cards = document.querySelectorAll('.card');
+                cards.forEach((card, index) => {
+                    timeline.fromTo(card,
+                        {
+                            opacity: 0,
+                            y: 30,
+                            scale: 0.9
+                        },
+                        {
+                            opacity: 1,
+                            y: 0,
+                            scale: 1,
+                            duration: 1,
+                            ease: "power2.out",
+                            delay: index * 0.3 // Staggering based on index
+                        }
+                    );
+                });
 
-cards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-        gsap.to(card.querySelector('.card-front'), { rotationY: 180, duration: 0.35 });
-        gsap.to(card.querySelector('.card-back'), { rotationY: 0, duration: 0.5 });
+                // Unobserve the cards once they have been animated
+                observer.unobserve(entry.target);
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(animateCards, options);
+
+    // Observe each card
+    cards.forEach(card => {
+        observer.observe(card);
     });
 
-    card.addEventListener('mouseleave', () => {
-        gsap.to(card.querySelector('.card-front'), { rotationY: 0, duration: 0.35 }); // Faster rotation back
-        gsap.to(card.querySelector('.card-back'), { rotationY: 180, duration: 0.5 }); // Faster rotation back
+    // Card flip effect (if applicable)
+    const flipCards = document.querySelectorAll('.card');
+
+    flipCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            gsap.to(card.querySelector('.card-front'), { rotationY: 180, duration: 0.35 });
+            gsap.to(card.querySelector('.card-back'), { rotationY: 0, duration: 0.5 });
+        });
+
+        card.addEventListener('mouseleave', () => {
+            gsap.to(card.querySelector('.card-front'), { rotationY: 0, duration: 0.35 });
+            gsap.to(card.querySelector('.card-back'), { rotationY: 180, duration: 0.5 });
+        });
     });
 });
-
-
-

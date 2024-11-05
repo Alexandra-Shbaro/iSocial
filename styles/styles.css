@@ -57,7 +57,8 @@ header {
 }
 
 .scrolled-header .navbar ul li a {
-    color:#35BBDF ; /* Change the font color to black */
+    color: #35BBDF;
+    /* Change the font color to black */
 }
 
 
@@ -96,8 +97,7 @@ header {
     margin-top: 10px;
     margin-top: 10px;
     width: 200px;
-    height: 200
-    px;
+    height: 200 px;
 }
 
 .navbar ul {
@@ -216,40 +216,77 @@ header {
 /*******************  ABOUT CONTENT  ***********************/
 
 .about {
-    background-size: cover;
+    background-image: url("../assets/images/Untitled design (1).png");
+    min-height: 700px; /* Set a specific height */
+    background-attachment: fixed; /* Create the parallax scrolling effect */
     background-position: center;
-    padding: 30px 20px;
+    background-repeat: no-repeat;
+    background-size: cover;
     color: white;
     text-align: center;
-    height: auto;
-    background-image: url('../assets/images/about-us-bg.jpg');
-    background-size: cover;
-    background-blend-mode: multiply;
-    display:flex;
+    padding: 80px 20px;
 }
 
-.about-content {
-    max-width: 400px;
-    margin: 0 auto;
-    background-color: rgba(0, 0, 0, 0.308);
-    /* Dark overlay for better readability */
-    padding: 20px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
+.about-container {
+    max-width: 1200px; /* Increased width for the container */
+    margin: 0 auto; /* Center the container */
+}
+
+.about h1 {
+    font-size: 40px;
+    color: #0d47a1;
+    font-weight: bold;
+    margin-bottom: 30px; /* Space between title and cards */
 }
 
 .about h2 {
-    font-size: 2em;
+    font-size: 24px; /* Size for the subheadings */
+    color: #0d47a1;
+    margin: 30px 0 10px; /* Space around the subheadings */
 }
 
-.about p {
-    font-size: 1em;
-    line-height: 1.8em;
+.about-card {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent for effect */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    flex: 1; /* Allow cards to grow equally */
+    max-width: 250px; /* Set a max-width for the cards */
+    display: flex; /* Use flexbox for card content */
+    flex-direction: column; /* Stack content vertically within cards */
+    align-items: center; /* Center card content */
+    margin: 10px; /* Space around cards */
+    opacity: 0; /* Initial opacity for animation */
+    transform: scale(0.9); /* Initial scale for pop-in effect */
 }
+
+.about-container {
+    display: flex; /* Flex layout for alignment */
+    flex-direction: column; /* Stack rows vertically */
+    align-items: center; /* Center cards and headings */
+}
+
+.about-card-icon {
+    font-size: 40px; /* Adjust icon size if needed */
+}
+
+.about-card p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #455a64;
+    margin-bottom: 20px;
+    text-align: center; /* Center text in cards */
+}
+
+@media (min-width: 768px) {
+    .about-cards-row {
+        display: flex; /* Use flexbox for card row */
+        justify-content: center; /* Center the card row */
+    }
+}
+
+
+
 
 
 
