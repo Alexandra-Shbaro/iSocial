@@ -16,17 +16,12 @@ body {
 
 .header-wrapper {
     max-height: 100vh;
-    /* Ensures the wrapper takes up the full viewport height */
     overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Prevents overflow from fixed backgrounds */
-
-    /* Set the combined background with images and gradient */
     background:
         linear-gradient(to bottom, #2379db, #4D94E6, #35BBDF, #21DADB),
-        /* Gradient as the first layer */
         url('../assets/images/waves.svg'),
         url('../assets/images/Pattern.png');
 
@@ -52,6 +47,7 @@ header {
     position: fixed;
     top: 0;
     left: 0;
+    background-color: rgba(0, 0, 0, 0.192);
     transition: all 0.3s ease-in, 0.3s ease-out;
     z-index: 200;
 }
@@ -76,7 +72,7 @@ header {
 
 
 .scrolled-header {
-    background-color: white;
+    background-color: white
 }
 
 .logo {
@@ -281,16 +277,6 @@ header {
     /* Center text in cards */
 }
 
-@media (min-width: 768px) {
-    .about-cards-row {
-        display: flex;
-        /* Use flexbox for card row */
-        justify-content: center;
-        /* Center the card row */
-    }
-}
-
-
 
 
 /******************************************************/
@@ -346,16 +332,14 @@ header {
 
 .expertise-item:hover {
     transform: scale(1.05);
-    /* Slight zoom on hover */
 }
 
 /* Card Title and Description Styling */
 .expertise-title {
     font-size: 1.2em;
-    color: #007bff;
+    color: #35BBDF;
     margin: 0;
     margin-bottom: 10px;
-    /* Space below the title */
 }
 
 .expertise-description {
@@ -371,12 +355,87 @@ header {
         flex: 1 1 calc(50% - 20px);
         /* Two items per row on medium screens */
     }
+
+    .navbar ul li {
+        margin: 0;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .methodology-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .navbar ul {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+
+    .why-us-content {
+        gap: 50px;
+    }
+
+    .contact-form {
+        width: 90%;
+    }
 }
 
 @media (max-width: 600px) {
     .expertise-item {
         flex: 1 1 calc(100% - 20px);
         /* One item per row on smaller screens */
+    }
+
+    .navbar ul li {
+        margin: 0;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .navbar {
+        margin-right: 50px !important;
+    }
+
+
+    .navbar ul {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .methodology-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+
+    .why-us-content {
+        gap: 50px;
+    }
+
+    .contact-form {
+        width: 90%;
     }
 }
 
@@ -432,9 +491,9 @@ header {
 }
 
 .icon {
-    opacity: 0.8;
+    opacity: 0.9;
     font-size: 2.5em;
-    background-color: rgba(55, 0, 255, 0.959);
+    background-color: #4D94E6;
     padding: 10px;
     border-radius: 100%;
     height: 60px;
@@ -459,8 +518,12 @@ p {
 /******************************************/
 
 .what-we-deliver {
+    background-image: url("../assets/images/final-polygon-bg.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     text-align: center;
-    background-color: #007bff;
     padding: 40px;
 }
 
@@ -511,12 +574,9 @@ p {
 .methodology-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* 3 columns layout */
     gap: 20px;
-    /* Space between items */
     max-width: 1200px;
     margin: 0 auto;
-    /* Center the container */
 }
 
 .card {
@@ -536,7 +596,6 @@ p {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     backface-visibility: hidden;
-    /* Hide the back side when not flipped */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -550,7 +609,7 @@ p {
 }
 
 .card-back {
-    background-color: #007bff;
+    background-color: #35BBDF;
     /* Back card color */
     color: #fff;
     /* Text color */
@@ -590,10 +649,15 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 40px;
-    background: linear-gradient(135deg, #4D94E6, #21DADB);
+    padding: 10px;
+    box-sizing: border-box;
     color: #fff;
     text-align: center;
+    background-image: url("../assets/images/final-polygon-bg.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .contact-us h2 {
@@ -604,8 +668,7 @@ h2 {
 
 /* Form Styling */
 .contact-form {
-    width: 100%;
-    max-width: 500px;
+    width: 30%;
     background-color: #ffffff;
     padding: 30px;
     border-radius: 12px;
@@ -616,6 +679,7 @@ h2 {
 .form-group {
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin-bottom: 20px;
 }
 
@@ -627,26 +691,23 @@ h2 {
 
 .form-group input,
 .form-group textarea {
-    width: 100%;
+    width: 95%;
     padding: 10px;
     font-size: 1em;
-    border-radius: 8px;
+    border-radius: 5px;
     border: 1px solid #ddd;
-    background-color: #f9f9f9;
+    background-color: #fafafade;
     color: #333;
     outline: none;
+    resize: none !important;
     transition: border-color 0.3s ease;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-    border-color: #21DADB;
+    border-color: #35BBDF;
 }
 
-/* Textarea Styling */
-.form-group textarea {
-    resize: vertical;
-}
 
 /* Button Styling */
 .submit-btn {
@@ -659,7 +720,6 @@ h2 {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background 0.3s ease;
 }
 
 .submit-btn:hover {
@@ -674,6 +734,42 @@ h2 {
 
     .contact-form {
         padding: 20px;
+    }
+
+    .about-cards-row {
+        display: flex;
+        justify-content: center;
+    }
+
+    .methodology-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .title {
+        font-size: 35px;
+    }
+
+    .navbar ul {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+
+    .why-us-content {
+        gap: 50px;
+    }
+
+    .contact-form {
+        width: 90%;
     }
 }
 
