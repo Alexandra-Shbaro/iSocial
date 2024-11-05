@@ -114,4 +114,26 @@ document.addEventListener("DOMContentLoaded", function () {
             gsap.to(card.querySelector('.card-back'), { rotationY: 180, duration: 0.5 });
         });
     });
+
+    // Animate "Why Choose Us" cards when section is in viewport
+    const whyUsSection = document.querySelector(".why-us");
+    const reasons = document.querySelectorAll(".why-us .reason");
+
+    const whyUsObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                gsap.from(reasons, {
+                    opacity: 0,
+                    x: -50, // Adjust to -50 for sliding from left or y: 50 for sliding from the bottom
+                    duration: 1,
+                    stagger: 0.3, // Staggers the animation for each card by 0.3 seconds
+                    ease: "power3.out"
+                });
+                observer.unobserve(entry.target); // Unobserve after animating
+            }
+        });
+    }, { threshold: 0.1 });
+
+    // Observe the "Why Choose Us" section
+    whyUsObserver.observe(whyUsSection);
 });
